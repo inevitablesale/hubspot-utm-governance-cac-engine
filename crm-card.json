@@ -1,0 +1,49 @@
+{
+  "type": "crm-card",
+  "data": {
+    "title": "UTM Attribution & CAC",
+    "fetch": {
+      "targetUrl": "{{BASE_URL}}/api/crm-card",
+      "objectTypes": [
+        {
+          "name": "contacts",
+          "propertiesToSend": [
+            "hs_object_id",
+            "email",
+            "firstname",
+            "lastname"
+          ]
+        }
+      ]
+    },
+    "display": {
+      "properties": [
+        {
+          "name": "touchpoints",
+          "label": "Touchpoints",
+          "dataType": "NUMERIC"
+        },
+        {
+          "name": "revenue",
+          "label": "Attributed Revenue",
+          "dataType": "CURRENCY"
+        },
+        {
+          "name": "cac",
+          "label": "CAC",
+          "dataType": "CURRENCY"
+        },
+        {
+          "name": "roi",
+          "label": "ROI",
+          "dataType": "NUMERIC"
+        }
+      ]
+    },
+    "actions": {
+      "baseUrls": [
+        "{{BASE_URL}}"
+      ]
+    }
+  }
+}

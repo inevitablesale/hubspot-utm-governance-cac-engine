@@ -1,0 +1,43 @@
+{
+  "name": "UTM Governance & CAC Engine",
+  "description": "HubSpot app that enforces UTM hygiene, auto-normalizes Source/Source Detail, calculates channel-level CAC & ROI, and pushes performance metrics into HubSpot dashboards.",
+  "uid": "hubspot-utm-governance-cac-engine",
+  "scopes": [
+    "crm.objects.contacts.read",
+    "crm.objects.contacts.write",
+    "crm.objects.deals.read",
+    "crm.objects.deals.write",
+    "crm.schemas.custom.read",
+    "crm.schemas.contacts.read",
+    "crm.schemas.contacts.write",
+    "timeline"
+  ],
+  "public": false,
+  "extensions": {
+    "crm": {
+      "cards": [
+        {
+          "file": "crm-card.json",
+          "location": "crm.record.tab"
+        }
+      ]
+    }
+  },
+  "auth": {
+    "redirectUrls": [
+      "http://localhost:3000/oauth/callback"
+    ],
+    "requiredScopes": [
+      "crm.objects.contacts.read",
+      "crm.objects.contacts.write"
+    ],
+    "optionalScopes": [
+      "crm.objects.deals.read",
+      "crm.objects.deals.write",
+      "timeline"
+    ]
+  },
+  "webhooks": {
+    "targetUrl": "{{BASE_URL}}/api/webhooks"
+  }
+}
